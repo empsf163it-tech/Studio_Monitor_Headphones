@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 210" width="100%" height="100%">
+  <defs>
+    <!-- Coral Red Soundwave Gradient -->
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b55"/>
+      <stop offset="100%" stop-color="#ff3b2b"/>
+    </linearGradient>
+
+    <!-- Headphone Body Teal Gradient -->
+    <linearGradient id="headphoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#144d58"/>
+      <stop offset="50%" stop-color="#0e363e"/>
+      <stop offset="100%" stop-color="#082228"/>
+    </linearGradient>
+
+    <!-- Sleek Neon Light Mode for Dark Header -->
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main Headphone Silhouette -->
+  <g class="hp-shell" fill="#143e47" stroke="#22d3ee" stroke-width="1.5" stroke-linejoin="round">
+    <!-- Outer Arc Headband -->
+    <path d="M 38 118 
+             C 38 22, 222 22, 222 118 
+             C 222 126, 204 126, 204 118 
+             C 204 38, 56 38, 56 118 
+             C 56 126, 38 126, 38 118 Z" fill="#0f343c" />
+
+    <!-- Headband Inner Cushion Pad -->
+    <path d="M 68 58 C 90 38, 170 38, 192 58 C 180 48, 142 42, 130 42 C 118 42, 80 48, 68 58 Z" fill="#22d3ee" fill-opacity="0.25" stroke="none" />
+
+    <!-- Left Ear Cup Structure -->
+    <!-- Outer Cup -->
+    <path d="M 22 104 C 22 92, 54 90, 58 104 L 58 174 C 54 188, 22 186, 22 174 Z" fill="#0d3138" />
+    <!-- Earpad Cushion (Facing Inside) -->
+    <path d="M 52 110 C 62 110, 62 168, 52 168 Z" fill="#081822" stroke="#22d3ee" stroke-width="1" />
+
+    <!-- Right Ear Cup Structure -->
+    <!-- Outer Cup -->
+    <path d="M 238 104 C 238 92, 206 90, 202 104 L 202 174 C 206 188, 238 186, 238 174 Z" fill="#0d3138" />
+    <!-- Earpad Cushion (Facing Inside) -->
+    <path d="M 208 110 C 198 110, 198 168, 208 168 Z" fill="#081822" stroke="#22d3ee" stroke-width="1" />
+  </g>
+
+  <!-- Soundwave Dots Matrix (Vibrant Coral Red) -->
+  <g fill="url(#waveGrad)" class="hp-wave">
+    <rect x="69.5" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="69.5" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="69.5" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="76.3" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="76.3" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="76.3" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="76.3" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="76.3" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="83.1" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="112.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="89.9" y="167.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="106.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="112.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="167.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="96.7" y="174.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="112.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="103.5" y="167.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="110.3" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="112.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="117.1" y="167.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="119.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="123.9" y="160.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="130.7" y="126.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="130.7" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="130.7" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="130.7" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="130.7" y="153.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="137.5" y="133.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="137.5" y="140.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="137.5" y="146.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="156.5" y="129.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="156.5" y="136.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="156.5" y="143.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="156.5" y="150.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="163.3" y="123.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="163.3" y="129.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="163.3" y="136.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="163.3" y="143.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="163.3" y="150.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="163.3" y="157.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="116.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="123.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="129.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="136.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="143.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="150.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="157.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="170.1" y="163.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="176.9" y="123.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="176.9" y="129.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="176.9" y="136.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="176.9" y="143.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="176.9" y="150.2" width="4.8" height="4.8" rx="1.0" />
+    <rect x="176.9" y="157.0" width="4.8" height="4.8" rx="1.0" />
+    <rect x="183.7" y="129.8" width="4.8" height="4.8" rx="1.0" />
+    <rect x="183.7" y="136.6" width="4.8" height="4.8" rx="1.0" />
+    <rect x="183.7" y="143.4" width="4.8" height="4.8" rx="1.0" />
+    <rect x="183.7" y="150.2" width="4.8" height="4.8" rx="1.0" />
+  </g>
+</svg>

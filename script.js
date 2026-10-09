@@ -1,0 +1,71 @@
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? '✕' : '☰';
+  });
+
+  const products = {
+    m20x: {brand:'AUDIO-TECHNICA',name:'ATH-M20x',summary:'A straightforward wired option for studio monitoring.',type:'Closed-back',use:'Recording, podcasting',description:'A practical entry point for people setting up a basic recording or listening workflow.',image:'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1100&q=85'},
+    sony7506: {brand:'SONY',name:'MDR-7506',summary:'A familiar choice for recording and monitoring.',type:'Closed-back',use:'Recording, podcasting',description:'Often seen in recording and broadcast environments. Check the fit, cable arrangement, and sound character against your own needs.',image:'sony_mdr7506.jpg'},
+    dt770: {brand:'BEYERDYNAMIC',name:'DT 770 PRO',summary:'Closed-back listening for studio sessions.',type:'Closed-back',use:'Recording, mixing',description:'Consider this style when you want isolation during recording. Check the exact impedance version and your audio source compatibility.',image:'https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1100&q=85'},
+    m50x: {brand:'AUDIO-TECHNICA',name:'ATH-M50x',summary:'A versatile model for monitoring and everyday listening.',type:'Closed-back',use:'Recording, mixing',description:'A popular all-rounder to consider for studio monitoring and general listening. Compare fit, sound preferences, and included accessories.',image:'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1100&q=85'},
+    hd560s: {brand:'SENNHEISER',name:'HD 560S',summary:'An open-back option for focused listening in a quiet room.',type:'Open-back',use:'Mixing',description:'Open-back headphones let sound travel in and out, so they are usually best in quiet environments rather than live recording situations.',image:'https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=1100&q=85'},
+    k371: {brand:'AKG',name:'K371',summary:'A foldable closed-back option for several workflows.',type:'Closed-back',use:'Recording, mixing, podcasting',description:'A closed-back model to consider across several uses. Check comfort, replacement-pad availability, and device compatibility.',image:'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1100&q=85'}
+  };
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if (id && products[id] && document.getElementById('detail-name')) {
+    const p = products[id];
+    document.getElementById('detail-brand').textContent = p.brand;
+    document.getElementById('detail-name').textContent = p.name;
+    document.getElementById('detail-summary').textContent = p.summary;
+    document.getElementById('detail-type').textContent = p.type;
+    document.getElementById('detail-description').textContent = p.description;
+    document.getElementById('detail-image').src = p.image;
+    document.getElementById('detail-image').alt = p.name + ' headphones';
+    document.title = p.name + ' — SonoVis';
+  }
+
+  const search = document.getElementById('product-search');
+  const filter = document.getElementById('use-filter');
+  const cards = [...document.querySelectorAll('.product-card')];
+  const count = document.getElementById('result-count');
+  const noResults = document.getElementById('no-results');
+  function filterProducts() {
+    if (!search || !filter) return;
+    const term = search.value.trim().toLowerCase();
+    const use = filter.value;
+    let visible = 0;
+    cards.forEach(card => {
+      const matchesText = card.dataset.name.toLowerCase().includes(term);
+      const matchesUse = use === 'all' || card.dataset.use.split(' ').includes(use);
+      const show = matchesText && matchesUse;
+      card.hidden = !show;
+      if (show) visible++;
+    });
+    if (count) count.textContent = `Showing ${visible} of ${cards.length} example products`;
+    if (noResults) noResults.hidden = visible !== 0;
+  }
+  if (search) search.addEventListener('input', filterProducts);
+  if (filter) filter.addEventListener('change', filterProducts);
+  const useParam = params.get('use');
+  if (useParam && filter) { filter.value = useParam; filterProducts(); }
+
+  const selectA = document.getElementById('compare-a');
+  const selectB = document.getElementById('compare-b');
+  function updateCompare() {
+    if (!selectA || !selectB) return;
+    const a = products[selectA.value], b = products[selectB.value];
+    document.getElementById('compare-name-a').textContent = a.name;
+    document.getElementById('compare-name-b').textContent = b.name;
+    document.getElementById('compare-type-a').textContent = a.type;
+    document.getElementById('compare-type-b').textContent = b.type;
+    document.querySelector('.compare-table tbody tr:nth-child(2) td:nth-child(2)').textContent = a.use;
+    document.querySelector('.compare-table tbody tr:nth-child(2) td:nth-child(3)').textContent = b.use;
+  }
+  if (selectA && selectB) { selectA.addEventListener('change', updateCompare); selectB.addEventListener('change', updateCompare); updateCompare(); }
+});
