@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (count) count.textContent = `Showing ${visible} of ${cards.length} example products`;
     if (noResults) noResults.hidden = visible !== 0;
+    equalizeCardBaselines();
   }
   if (search) search.addEventListener('input', filterProducts);
   if (filter) filter.addEventListener('change', filterProducts);
@@ -68,4 +69,72 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.compare-table tbody tr:nth-child(2) td:nth-child(3)').textContent = b.use;
   }
   if (selectA && selectB) { selectA.addEventListener('change', updateCompare); selectB.addEventListener('change', updateCompare); updateCompare(); }
+
+  // Dynamic baseline equalization for cards in rows
+  function equalizeCardBaselines() {
+    const cardGrids = document.querySelectorAll('.grid-3, .grid-4, .grid-2, .purpose-grid, .product-grid, .contact-info-cards');
+
+    cardGrids.forEach(grid => {
+      const cards = Array.from(grid.children).filter(el => 
+        el.classList.contains('info-card') || 
+        el.classList.contains('product-card') || 
+        el.classList.contains('purpose-card')
+      );
+      if (cards.length < 2) return;
+
+      // Reset inline min-heights first to measure natural content heights
+      cards.forEach(card => {
+        const h = card.querySelector('h3');
+        if (h) h.style.minHeight = '';
+        const p = card.querySelector('p:not(.product-kicker):not(.eyebrow)');
+        if (p) p.style.minHeight = '';
+      });
+
+      // Check if cards are laid out side-by-side
+      const visibleCards = cards.filter(c => !c.hidden);
+      if (visibleCards.length < 2) return;
+      if (Math.abs(visibleCards[0].offsetLeft - visibleCards[1].offsetLeft) < 10) {
+        // Single column layout on mobile
+        return;
+      }
+
+      // Group cards into rows by vertical offset
+      const rows = new Map();
+      visibleCards.forEach(card => {
+        const rowKey = Math.round(card.offsetTop / 10) * 10;
+        if (!rows.has(rowKey)) rows.set(rowKey, []);
+        rows.get(rowKey).push(card);
+      });
+
+      // Equalize each row's heading heights so subtexts start at the exact same baseline
+      rows.forEach(rowCards => {
+        if (rowCards.length < 2) return;
+
+        const headings = rowCards.map(c => c.querySelector('h3')).filter(Boolean);
+        let maxHeadingH = 0;
+        headings.forEach(h => {
+          const hH = h.offsetHeight;
+          if (hH > maxHeadingH) maxHeadingH = hH;
+        });
+
+        if (maxHeadingH > 0) {
+          headings.forEach(h => {
+            h.style.minHeight = `${maxHeadingH}px`;
+          });
+        }
+      });
+    });
+  }
+
+  equalizeCardBaselines();
+  window.addEventListener('load', equalizeCardBaselines);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeCardBaselines);
+  }
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(equalizeCardBaselines, 80);
+  });
 });
